@@ -1,6 +1,6 @@
 {
   "name": "simple-ws",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A reconnect-able websocket client",
   "main": "index.js",
   "scripts": {
