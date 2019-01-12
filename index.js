@@ -9,7 +9,6 @@ const WS = {
 function doInit(options) {
   WS.options = options;
   WS.lastHeartBeat = new Date().getTime();
-  WS.timeout = 8000;
   WS.status = 0;
 
   if (WS.checkInterval) clearInterval(WS.checkInterval);
@@ -44,7 +43,7 @@ function doClose() {
 
 function checkConnect() {
   if (WS.status === 0) return;
-  if (new Date().getTime() - WS.lastHeartBeat > WS.timeout) {
+  if (new Date().getTime() - WS.lastHeartBeat > WS.options.timeout) {
     WS.websocket.close();
     if (WS.status === -1) reConnect();
   }
